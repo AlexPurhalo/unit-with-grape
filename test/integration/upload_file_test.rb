@@ -32,4 +32,9 @@ describe 'Upload a file' do
   it 'retrieves the actual filename' do
     last_response.body.must_include 'zip.zip'
   end
+
+  it 'retrieves the full path of the file' do
+    # require 'pry'; binding.pry # > last_response, output: body, erros, header, etc...
+    last_response.body.must_include 'public/uploads/assets'
+  end
 end
